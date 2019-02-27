@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project xmlns:nuance="https://developer.nuance.com/mix/nlu/trsx" xml:lang="eng-USA" nuance:version="2.3">
+    <metadata>
+        <entry key="created_by">Vincent Fournier</entry>
+        <entry key="created_by">vincent.fournier@nuance.com</entry>
+        <entry key="created_at">2019-02-18 19:30:20+00:00</entry>
+        <entry key="description">Sample model for demonstration of 1 simple intent and two concepts</entry>
+        <entry key="short_name">Coffee Maker Sample Model</entry>
+        <entry key="source">Nuance Communications</entry>
+        <entry key="type">sample</entry>
+        <entry key="version">2.0.0</entry>
+    </metadata>
+    <sources>
+        <source name="nuance_custom_data" displayName="nuance_custom_data" version="1.0" type="CUSTOM"/>
+    </sources>
+    <ontology base="http://localhost:8080/resources/ontology-1.0.xml">
+        <intents>
+            <intent name="orderCoffee">
+                <links>
+                    <link conceptref="CoffeeSize"/>
+                    <link conceptref="CoffeeType"/>
+                </links>
+            </intent>
+        </intents>
+        <concepts>
+            <concept name="CoffeeType"/>
+            <concept name="CoffeeSize"/>
+        </concepts>
+    </ontology>
+    <dictionaries>
+        <dictionary conceptref="CoffeeType">
+            <entry literal="americano" value="americano"/>
+            <entry literal="black" value="americano"/>
+            <entry literal="cafe latte" value="latte"/>
+            <entry literal="cafe mocha" value="mocha"/>
+            <entry literal="cap" value="cap"/>
+            <entry literal="cappuccino" value="cap"/>
+            <entry literal="coffee" value="americano"/>
+            <entry literal="espresso" value="espresso"/>
+            <entry literal="latte" value="latte"/>
+            <entry literal="latte mocha" value="mocha"/>
+            <entry literal="mocha" value="mocha"/>
+            <entry literal="mocha latte" value="mocha"/>
+        </dictionary>
+        <dictionary conceptref="CoffeeSize">
+            <entry literal="double" value="med"/>
+            <entry literal="double shot" value="med"/>
+            <entry literal="grande" value="med"/>
+            <entry literal="large" value="lg"/>
+            <entry literal="medium" value="med"/>
+            <entry literal="single" value="sm"/>
+            <entry literal="single shot" value="sm"/>
+            <entry literal="small" value="sm"/>
+            <entry literal="tall" value="sm"/>
+            <entry literal="triple" value="lg"/>
+            <entry literal="triple shot" value="lg"/>
+            <entry literal="venti" value="lg"/>
+        </dictionary>
+    </dictionaries>
+    <samples>
+        <sample intentref="orderCoffee" count="1">make me a<annotation conceptref="CoffeeSize">large</annotation>
+            <annotation conceptref="CoffeeType">coffee</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">give me a<annotation conceptref="CoffeeType">coffee</annotation>,<annotation conceptref="CoffeeSize">large</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">a<annotation conceptref="CoffeeSize">small</annotation>
+            <annotation conceptref="CoffeeType">mocha</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">i'd like a<annotation conceptref="CoffeeSize">medium</annotation>
+            <annotation conceptref="CoffeeType">cappuccino</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">
+            <annotation conceptref="CoffeeSize">small</annotation>
+            <annotation conceptref="CoffeeType">coffee</annotation>.</sample>
+        <sample intentref="orderCoffee" count="1">can i get a<annotation conceptref="CoffeeSize">large</annotation>
+            <annotation conceptref="CoffeeType">latte</annotation>?</sample>
+        <sample intentref="orderCoffee" count="1">Can I get a<annotation conceptref="CoffeeSize">large</annotation>
+            <annotation conceptref="CoffeeType">coffee</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">
+            <annotation conceptref="CoffeeSize">small</annotation>
+            <annotation conceptref="CoffeeType">mocha</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">a<annotation conceptref="CoffeeSize">medium</annotation>
+            <annotation conceptref="CoffeeType">latte</annotation>please</sample>
+        <sample intentref="orderCoffee" count="1">let me get a<annotation conceptref="CoffeeSize">small</annotation>
+            <annotation conceptref="CoffeeType">americano</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">
+            <annotation conceptref="CoffeeType">cappuccino</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">gimme a<annotation conceptref="CoffeeSize">double</annotation>
+            <annotation conceptref="CoffeeType">espresso</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">make me a<annotation conceptref="CoffeeType">latte</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">i'll take a<annotation conceptref="CoffeeSize">small</annotation>
+            <annotation conceptref="CoffeeType">coffee</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">i'd like a<annotation conceptref="CoffeeSize">double</annotation>
+            <annotation conceptref="CoffeeType">cappuccino</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">just a<annotation conceptref="CoffeeSize">small</annotation>
+            <annotation conceptref="CoffeeType">latte</annotation>please</sample>
+        <sample intentref="orderCoffee" count="1">can i get an<annotation conceptref="CoffeeType">americano</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">
+            <annotation conceptref="CoffeeType">mocha latte</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">a<annotation conceptref="CoffeeType">mocha latte</annotation>please</sample>
+        <sample intentref="orderCoffee" count="1">one<annotation conceptref="CoffeeType">espresso</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">
+            <annotation conceptref="CoffeeSize">grande</annotation>
+            <annotation conceptref="CoffeeType">cafe latte</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">a<annotation conceptref="CoffeeSize">grande</annotation>
+            <annotation conceptref="CoffeeType">cafe latte</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">i want a<annotation conceptref="CoffeeSize">large</annotation>
+            <annotation conceptref="CoffeeType">mocha</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">brew me an<annotation conceptref="CoffeeType">americano</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">an<annotation conceptref="CoffeeType">americano</annotation>please ,<annotation conceptref="CoffeeSize">small</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">make me an<annotation conceptref="CoffeeType">americano</annotation>
+            <annotation conceptref="CoffeeSize">large</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">make a<annotation conceptref="CoffeeSize">small</annotation>
+            <annotation conceptref="CoffeeType">mocha</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">i'll have a<annotation conceptref="CoffeeSize">medium</annotation>
+            <annotation conceptref="CoffeeType">cap</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">a<annotation conceptref="CoffeeSize">venti</annotation>
+            <annotation conceptref="CoffeeType">cafe latte</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">a<annotation conceptref="CoffeeSize">medium</annotation>
+            <annotation conceptref="CoffeeType">espresso</annotation>please</sample>
+        <sample intentref="orderCoffee" count="1">
+            <annotation conceptref="CoffeeSize">small</annotation>
+            <annotation conceptref="CoffeeType">coffee</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">gimme a<annotation conceptref="CoffeeType">mocha</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">
+            <annotation conceptref="CoffeeSize">small</annotation>
+            <annotation conceptref="CoffeeType">cafe latte</annotation>please</sample>
+        <sample intentref="orderCoffee" count="1">
+            <annotation conceptref="CoffeeSize">large</annotation>
+            <annotation conceptref="CoffeeType">coffee</annotation>please</sample>
+        <sample intentref="orderCoffee" count="1">i think i'll have a<annotation conceptref="CoffeeSize">medium</annotation>
+            <annotation conceptref="CoffeeType">latte</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">i'll try a<annotation conceptref="CoffeeSize">small</annotation>
+            <annotation conceptref="CoffeeType">mocha</annotation>
+        </sample>
+        <sample intentref="orderCoffee" count="1">an<annotation conceptref="CoffeeType">espresso</annotation>please</sample>
+    </samples>
+</project>

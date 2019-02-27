@@ -13,16 +13,30 @@ Due to the ability of Azure to create continuous deployment from most developmen
 ### How to deploy on Azure
 
 1. Fork this project in your own namespace.
-2. Create a Function App resource https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function
-    * You don't need to Create an HTTP triggered function
-3. Link your GitHub project to the newly created Azure Function https://docs.microsoft.com/en-us/azure/azure-functions/functions-continuous-deployment#set-up-continuous-deployment
+2. Create a Function App resource. You can use the (Azure tutorial)[https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function] and stop before `Create an HTTP triggered function` section.
+3. Follow the (Azure instructions)[https://docs.microsoft.com/en-us/azure/azure-functions/functions-continuous-deployment#set-up-continuous-deployment] to Link your GitHub project to the newly created Azure Function
 4. In the *Deployment Center* press *Sync* and wait for the Azure Function App to be deployed.
-5. Validate that you have a list of Functions
+5. Validate that the functions are properly running
+
+```sh
+  $ curl <your-function-app-name>.azurewebsites.net/api/v1/coffee/1.0.0/capabilities
+  {
+    "data": {
+      "systemResponse": [
+        "APP_ENTRY"
+      ],
+      "clientData": [
+        "PRICE"
+      ]
+    }
+  }
+```
 
 ### How to link with a Mix Dialog project
 
-TODO, document this section once the UI code is done.
-For now the code is running here https://mixbeta.labs.nuance.com/#/projects/25517/details
+Go to mix and create a project using the files in the `mix.ide` folder.
+
+TODO link to dialog documentation
 
 ### How to develop
 

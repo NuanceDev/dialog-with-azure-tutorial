@@ -3,7 +3,6 @@ module.exports = async function (context, req) {
         body: {
             "data": {
                 "systemResponse": ["APP_ENTRY"],
-                
                 "clientData": [ "PRICE" ]
             }
         }

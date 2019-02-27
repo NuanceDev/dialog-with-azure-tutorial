@@ -9,7 +9,7 @@
         "get",
         "post"
       ],
-      "route": "api/v1/coffee/v0.0.1/data/grounding/CoffeeSize"
+      "route": "v1/coffee/{version}/capabilities"
     },
     {
       "type": "http",
