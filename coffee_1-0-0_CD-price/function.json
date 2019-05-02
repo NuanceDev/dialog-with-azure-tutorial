@@ -9,7 +9,7 @@
         "get",
         "post"
       ],
-      "route": "v1/coffee/2.0.0/data/clientData/PRICE"
+      "route": "v1/coffee/1.0.0/data/clientData/price"
     },
     {
       "type": "http",

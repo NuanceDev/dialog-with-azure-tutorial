@@ -26,7 +26,7 @@ Due to the ability of Azure to create continuous deployment from most developmen
         "APP_ENTRY"
       ],
       "clientData": [
-        "PRICE"
+        "price"
       ]
     }
   }
